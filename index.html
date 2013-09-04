@@ -67,7 +67,8 @@ around at the time it would have made my job a lot easier.  This is a nice segwa
 <h4>Inventory Search <span class="label label-info">isocket</span></h4>
 <p>
 isocket's core mission is to make it easier for Publishers and Advertisers to find each other and do business directly.  
-Central to that goal is the ability to find inventory available on a particular site by virtually any number of vectors, such as comScore demographics, ad placement, price, category... even weather - although no one has ever used that.
+Central to that goal is the ability to find inventory available on a particular site by virtually any number of vectors, such as comScore demographics, ad placement, price, category... even weather - although no one has ever used that.</br>
+<a href="/images/isocket_screenshot.png" target="_blank">screenshot</a>
 </p>
 <p>
 <span class="badge">Node.js</span>
@@ -78,14 +79,14 @@ Central to that goal is the ability to find inventory available on a particular 
 </p>
 <h4>Content Categorizer / Search <span class="label label-inverse">Monitor110</span></h4>
 <p>
-As User Generated Content came on to the web, Monitor110 would ingest it in to it's multi-stage processing service.  
-Using a homegrown Bayesian categorization engine, articles would be tagged with relevant stock tickers or category.  Daily
-re-training of the engine actually would refine the queries such that after a period of time - we would see articles 
+As User Generated Content came on to the web, Monitor110 ingested content in to it's multi-stage processing service.  
+Using a homegrown Bayesian categorization engine, articles are tagged with relevant stock tickers or category.  Daily
+re-training of the engine actually refined the queries such that after a period of time we would see articles 
 popping up in a topic that we had not put in a single training term for. 
 </p>
 <p>
 The best example of this was during the time of the first iPhone.  Rumors were circulating that Apple was releasing a 
-phone and the internet chatter had dubbed it the 'Jesus Phone'.  Within a few days, articles mentioning 'Jesus Phone' AND no other Apple-esque terms started appearing in the APPL ticker.  We all ran away terrified as the now-sentient system threatened to blog mean things about us.
+phone and the internet chatter had dubbed it the 'Jesus Phone'.  Within a few days, articles mentioning 'Jesus Phone' and no other Apple-esque terms started appearing in the APPL ticker.  We all ran away terrified as the now-sentient system threatened to blog mean things about us.
 </p>
 <p>
 <span class="badge">Java</span>
@@ -113,18 +114,54 @@ a Publisher was making money.  (Screenshot hopefully coming).
 </p>
 <h4>Web Automation <span class="label label-warning">Admeld</span></h4>
 <p>
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+Web Automation grew out of two essential needs : 
+<ul>
+<li>Providing Publishers all the data they needed in one place.</li>
+<li>Insight in to what the Ad Networks were doing to enable our Ad Servers to make more informed decisions.</li>
+</ul>
 </p>
 <p>
+We built a system that would log in to various ad network reporting systems (very few had APIs) and scrape out relevant 
+impression and payment data.  This data would be used alongside our own reporting information to uncover discrepancies.  As 
+an example :
+</p>
+<p>
+We would request to serve an Ad from both <strong>Ad Network A</strong> and <strong>Ad Network B</strong>.  <strong>Ad Network A</strong>
+would tell us they pay $1 per impression, while <strong>Ad Network B</strong> would report they only paid $0.90.  We would serve <strong>A</strong>.  After scraping numbers from their reporting system and comparing them against our own numbers, we would see that <strong>Ad Network A</strong> would underreport the impressions - either for nefarious reasons or just lack of technical sophistication.  We 
+would know that we served 100, but they would report 80.  This meant that we're getting paid only $80 for 100 impressions while 
+serving from <strong>Ad Network B</strong> (who reported more accurately) would have netted us $90.  The Ad Server would then work off 
+our own internally derived CPM and favor the <em>true</em> higher price.  Ad Network names have been removed to protect the innocent.
+</p>
+The system was built in a time before really cool stuff like <a href="http://casperjs.org/" target="_blank">CasperJS</a> existed, so we 
+rolled our own solution.  A service would fire up individually addressable instances of Firefox, which had ports open to allow us to 
+inject our own Javascript in to the page.  Every page the browser visited would then contain our own admeld.js which had methods we 
+could call from the main Java scraping service.  (i.e. pullTableColumns would exist as a Java method which then call the corresponding 
+Javascript function through the JSSH port).
+</p>
+<p>
+With this framework now in place, I built a runner that would use Groovy scripts that were custom built for each reporting platform.  User
+credentials were injected in, and the service would return simple JSON results from the scrape.  We were essentially API-afying a site 
+and normalizing their data to fit in to our system in a clear and IAB standards-compliant way.  It was easily one of our biggest wins, 
+and often cited as a key reason Google aquired Admeld.
+</p>
 <span class="badge">Firefox</span>
 <span class="badge">Java</span>
 <span class="badge">Groovy</span>
 <span class="badge">MySQL</span>
 <span class="badge">Javascript</span>
 </p>
-<h4>Data Aggregator <span class="label label-warning">Admeld</span></h4>
+<h4>Bezerk and Smoosh <span class="label label-warning">Admeld</span></h4>
 <p>
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+Why "map" when you can Bezerk?  Why "reduce" when you can Smoosh?  In order for Admeld's ad servers to make intelligent decisions, 
+we needed to know what they were doing.  
+</p>
+<p>
+Ad Server clusters in multiple co-locations dumped billions of lines of log data.  More often than not, a single request would 
+span multiple servers.  Small (local) Hadoop clusters would grab 15 minute increments of log data from all the servers, and then
+combine these lines together in to a coherent RequestChain object which would represent only the relevant (non-duplicated) data points about that particular request.  These newly smooshed objects would then stream in to the central Hadoop cluster for some serious
+crunching.  At any given time, we were no more than 15 minutes off real-time with our reporting.  This was huge, as most Publishers
+were accostomed to only getting this data every few days, or sometimes even a whole month.  Combined with the Web Automation system,
+we were able to have a complete view of what was going on in what was quickly becoming a very very large ecosystem.
 </p>
 <p>
 <span class="badge">Hadoop</span>
@@ -133,7 +170,7 @@ Collaboratively administrate empowered markets via plug-and-play networks. Dynam
 </p>
 <h4>Disaster Alerts in Google Search <span class="label label-success">Google</span></h4>
 <p>
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+TODO
 </p>
 <p>
 <span class="badge">Python</span>
@@ -143,7 +180,7 @@ Collaboratively administrate empowered markets via plug-and-play networks. Dynam
 </p>
 <h4>Power Outage Maps During Hurricane Sandy <span class="label label-success">Google</span></h4>
 <p>
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+TODO
 </p>
 <p>
 <span class="badge">Python</span>
@@ -153,7 +190,7 @@ Collaboratively administrate empowered markets via plug-and-play networks. Dynam
 </p>
 <h4>Magicbus <span class="label label-info">isocket</span></h4>
 <p>
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+Evented io / pubsub backend.  TODO.
 </p>
 <p>
 <span class="badge">C++</span>
@@ -164,9 +201,13 @@ Collaboratively administrate empowered markets via plug-and-play networks. Dynam
 <span class="badge">RabbitMQ</span>
 <span class="badge">Redis</span>
 </p>
-<h4>Chromeld / Firemeld <span class="label label-warning">Admeld</span></h4>
+<h4>Firemeld / Firemeld for Chrome <span class="label label-warning">Admeld</span></h4>
 <p>
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+TODO</br>
+<a href="https://chrome.google.com/webstore/detail/firemeld-for-chrome/ookfklonckbommknbjoglkhmjcjihhpp?hl=en" target="_blank">
+extension</a></br>
+<a href="https://portal.admeld.com/custom/firemeld/download.html" target="_blank">
+product page</a>
 </p>
 <p>
 <span class="badge">Firefox</span>
@@ -176,7 +217,20 @@ Collaboratively administrate empowered markets via plug-and-play networks. Dynam
 </p>
 <h4>Dogfort <span class="label label-important">Side Project</span></h4>
 <p>
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+Anti-social networking.  As my circle of eng friends from Admeld got thrown to the diaspora, we could no longer all communicate
+via shared Skype session or on corporate GTalk.  Also, most chat platforms were pretty weak on showing images and video.  We tried
+our own private sub-reddit, and a number of other things and finally Dogfort was born.  It had a few key essential features:
+<ul>
+  <li>Invite Only</li>
+  <li>One-click image/video sharing from anywhere</li>
+  <li>Group chat</li>
+  <li>Abundant shaming for reposting an image</li>
+</ul>
+</p>
+<p>
+Built under cover of darkness, and usually while a little drunk - Dogfort has been through many iterations.  Direct contact with Dogfort users provide a clean and efficient feedback loop for incorporating new features.  Today's version has a voting system, comments, and a Chrome extension to allow for quick posting.  Built using AngularJS on the frontend and Node.js on the back, Dogfort
+also gives me an awesome playground to try out new technologies before advocating for them in my paying gig.</br>
+<a href="/images/dogfort_screenshot.png" target="_blank">screenshot</a>
 </p>
 <p>
 <span class="badge">AngularJS</span>
