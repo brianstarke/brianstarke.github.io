@@ -17,12 +17,8 @@
           Stuff I Built&nbsp;<b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-          <li><a tabindex="-1" href="#search">Inventory Search</a></li>
-          <li><a tabindex="-1" href="#analytics">Cross Portal Search</a></li>
-          <li><a tabindex="-1" href="#webauto">UGC Categorizer</a></li>
-          <li><a tabindex="-1" href="#browser">Browser Extensions</a></li>
-          <li><a tabindex="-1" href="#datums">Data Aggregation</a></li>
-          <li><a tabindex="-1" href="#codegen">Code Generation</a></li>
+          <li><a tabindex="-1" href="#cps">Cross Portal Search</a></li>
+          <li><a tabindex="-1" href="#inventory_search">Inventory Search</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -49,54 +45,150 @@
 </div>
 
 <div class="main-container">
-<h2>Stuff I Built</h2>
-<a id='search'></a>
-<h4>Inventory Search <span class="label label-info">isocket</span></h4>
-<p>
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
-</p>
+<h2>Stuff I Built <span class="muted"><small>in no particular order</small></span></h2>
+<a id='cps'></a>
 <h4>Cross Portal Search <span class="label label-warning">Admeld</span></h4>
 <p>
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
-</p>
-<h4>UGC Content Categorizer <span class="label label-inverse">Monitor110</span></h4>
+Between Users, Ad Network Accounts, Creatives, Orders and a whole other mess of other things... finding a particular
+piece of information quickly was a trial for internal Admeld users.  Cross Portal Search (affectionately known as 'Corporal
+Smurf' after a post-dentist talk with the CTO) was a data-type agnostic search engine to find whatever you 
+were looking for.</p>
 <p>
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+This search engine indexed all the important metadata about every piece of data in our system to allow quick recall 
+from virtually anything you wanted to search on.  This was built in Java using Lucene, although if Elasticsearch were
+around at the time it would have made my job a lot easier.  This is a nice segway in to the next item...
+</p>
+<p>
+<span class="badge">Java</span>
+<span class="badge">Lucene</span>
+<span class="badge">MySQL</span>
+</p>
+<a id='inventory_search'></a>
+<h4>Inventory Search <span class="label label-info">isocket</span></h4>
+<p>
+isocket's core mission is to make it easier for Publishers and Advertisers to find each other and do business directly.  
+Central to that goal is the ability to find inventory available on a particular site by virtually any number of vectors, such as comScore demographics, ad placement, price, category... even weather - although no one has ever used that.
+</p>
+<p>
+<span class="badge">Node.js</span>
+<span class="badge">Javascript</span>
+<span class="badge">Elasticsearch</span>
+<span class="badge">Java</span>
+<span class="badge">Thrift</span>
+</p>
+<h4>Content Categorizer / Search <span class="label label-inverse">Monitor110</span></h4>
+<p>
+As User Generated Content came on to the web, Monitor110 would ingest it in to it's multi-stage processing service.  
+Using a homegrown Bayesian categorization engine, articles would be tagged with relevant stock tickers or category.  Daily
+re-training of the engine actually would refine the queries such that after a period of time - we would see articles 
+popping up in a topic that we had not put in a single training term for. 
+</p>
+<p>
+The best example of this was during the time of the first iPhone.  Rumors were circulating that Apple was releasing a 
+phone and the internet chatter had dubbed it the 'Jesus Phone'.  Within a few days, articles mentioning 'Jesus Phone' AND no other Apple-esque terms started appearing in the APPL ticker.  We all ran away terrified as the now-sentient system threatened to blog mean things about us.
+</p>
+<p>
+<span class="badge">Java</span>
+<span class="badge">Lucene</span>
+<span class="badge">ActiveMQ</span>
+<span class="badge">MySQL</span>
 </p>
 <h4>RTB Analytics <span class="label label-warning">Admeld</span></h4>
 <p>
-Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+Insight in to how a Publisher was making money off Admeld's RTB platform was essential to selling the concept of RTB, as
+well as providing any shred of market intelligence to a typically black-boxed world. 
+</p>
+<p>
+The RTB Analytics platform leveraged our already existing (and ever growing) Hadoop-based data aggregation system.  By 
+slicing different types of data in to pivotable chunks, we were able to present clear and dynamic visualizations of how 
+a Publisher was making money.  (Screenshot hopefully coming).
+</p>
+<p>
+<span class="badge">Ruby</span>
+<span class="badge">Sinatra</span>
+<span class="badge">jQuery</span>
+<span class="badge">Hadoop</span>
+<span class="badge">Vertica</span>
+<span class="badge">Javascript</span>
 </p>
 <h4>Web Automation <span class="label label-warning">Admeld</span></h4>
 <p>
 Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
 </p>
+<p>
+<span class="badge">Firefox</span>
+<span class="badge">Java</span>
+<span class="badge">Groovy</span>
+<span class="badge">MySQL</span>
+<span class="badge">Javascript</span>
+</p>
 <h4>Data Aggregator <span class="label label-warning">Admeld</span></h4>
 <p>
 Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+</p>
+<p>
+<span class="badge">Hadoop</span>
+<span class="badge">Java</span>
+<span class="badge">MySQL</span>
 </p>
 <h4>Disaster Alerts in Google Search <span class="label label-success">Google</span></h4>
 <p>
 Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
 </p>
+<p>
+<span class="badge">Python</span>
+<span class="badge">C++</span>
+<span class="badge">Javascript</span>
+<span class="badge">Appengine</span>
+</p>
 <h4>Power Outage Maps During Hurricane Sandy <span class="label label-success">Google</span></h4>
 <p>
 Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+</p>
+<p>
+<span class="badge">Python</span>
+<span class="badge">Node.js</span>
+<span class="badge">Javascript</span>
+<span class="badge">Appengine</span>
 </p>
 <h4>Magicbus <span class="label label-info">isocket</span></h4>
 <p>
 Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
 </p>
+<p>
+<span class="badge">C++</span>
+<span class="badge">Thrift</span>
+<span class="badge">Java</span>
+<span class="badge">Node.js</span>
+<span class="badge">Javascript</span>
+<span class="badge">RabbitMQ</span>
+<span class="badge">Redis</span>
+</p>
 <h4>Chromeld / Firemeld <span class="label label-warning">Admeld</span></h4>
 <p>
 Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
 </p>
-<h4>Dogfort <span class="label">Side Project</span></h4>
+<p>
+<span class="badge">Firefox</span>
+<span class="badge">Chrome</span>
+<span class="badge">Javascript</span>
+<span class="badge">jQuery</span>
+</p>
+<h4>Dogfort <span class="label label-important">Side Project</span></h4>
 <p>
 Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
 </p>
+<p>
+<span class="badge">AngularJS</span>
+<span class="badge">Javascript</span>
+<span class="badge">Node.js</span>
+<span class="badge">MongoDB</span>
+<span class="badge">Heroku</span>
+<span class="badge">Express</span>
+<span class="badge">Firebase</span>
+</p>
 
-<h2>Where I Built It</h2>
+<h2>Where I Built It <span class="muted"><small>in a rather particular order</small></span></h2>
 <a id='isocket'></a>
 <h4>isocket&nbsp;
 <span class="text-warning">Senior Software Engineer</span>&nbsp;
