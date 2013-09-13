@@ -22,19 +22,10 @@
           <li><a tabindex="-1" href="#dogfort">Dogfort</a></li>
         </ul>
       </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          Where I Built It&nbsp;<b class="caret"></b>
+      <li>
+        <a href="#where">
+          Where I Built It
         </a>
-        <ul class="dropdown-menu">
-          <li><a tabindex="-1" href="#isocket">isocket</a></li>
-          <li><a tabindex="-1" href="#google">Google</a></li>
-          <li><a tabindex="-1" href="#admeld">Admeld</a></li>
-          <li><a tabindex="-1" href="#monitor">Monitor110</a></li>
-          <li><a tabindex="-1" href="#nrsi">Nat'l Reading Styles Institute</a></li>
-          <li><a tabindex="-1" href="#suss">SUSS MicroTec</a></li>
-          <li><a tabindex="-1" href="#ibm">IBM</a></li>
-        </ul>
       </li>
     </ul>
     <ul class="nav pull-right">
@@ -175,10 +166,10 @@ we were able to have a complete view of what was going on in what was quickly be
 </p>
 <h4>Disaster Alerts in Google Search / Android <span class="label label-success">Google</span></h4>
 <p>
-Cellular providers have been required by law to (finally) start pushing out timely public safety alerts to phones.  These alerts are usually in all caps and accompanied by an obscenely scary noise.  Using the data that the Public Alerts team is already ingesting, we wanted to supplant (or at least suppliment) these alerts with something less panic-inducing, and more information forward.  To replace "FLOOD WARNING" with a map and detailed (decapitalized) information such as time, duration, depth, likelihood... all the stuff that matters when you need it most.
+Cellular providers have been required by law to (finally) start pushing out timely public safety alerts to phones.&nbsp;&nbsp;These alerts are usually in all caps and accompanied by an obscenely scary noise.&nbsp;&nbsp;Using the data that the Public Alerts team is already ingesting, we wanted to supplant (or at least suppliment) these alerts with something less panic-inducing, and more information forward.&nbsp;&nbsp;Our mission was to replace <b>"FLOOD WARNING"</b> with a map and detailed (decapitalized) information such as time, duration, depth, likelihood... all the stuff that matters when you need it most.
 </p>
 <p>
-My particular contribution to this project was to take the alert text from sources like the National Weather Service and extract out the most relevant parts and recombine them to form a useful and informative snippet.  For example, on a Tornado warning I'd focus more on directional and temporal aspects rather than rainfall amounts.  This was done by tokenizing the text and weighting certain n-grams based on the alert type.  I also worked on the UI for both the Web, and Android.
+My particular contribution to this project was to take the alert text from sources like the National Weather Service and extract out the most relevant parts and recombine them to form a useful and informative snippet.&nbsp;&nbsp;For example, on a Tornado warning I'd focus more on directional and temporal aspects rather than rainfall amounts.&nbsp;&nbsp;This was done by tokenizing the text and weighting certain n-grams based on the alert type.&nbsp;&nbsp;I also worked on the UI for both the Web, and Android.
 </p>
 <p>
 These alerts were intended originally for only for Maps on the Android platform, but once demo'd we were asked to put them in Google Web Search, iOS Maps, and Google Now.  
@@ -193,10 +184,14 @@ These alerts were intended originally for only for Maps on the Android platform,
 </p>
 <h4>Power Outage/Gas Supply Maps During Hurricane Sandy <span class="label label-success">Google</span></h4>
 <p>
-During Hurricane Sandy, the NYC branch of the Google Crisis Response team had a rare opportunity to operate in an area where we were actively responding as well.  Since we were able to work closely with NYC Department of Emergency Management and the NYC Mayors office, we were able to get access to power outage data we normally were never allowed to use. 
+During Hurricane Sandy, the NYC branch of the Google Crisis Response team had a rare opportunity to operate in an area where we were actively responding as well.&nbsp;&nbsp;Since we were able to work closely with NYC Department of Emergency Management and the NYC Mayors office, we were able to get access to power outage data we normally were never allowed to use and plot it on our Crisis Map. 
 </p>
 <p>
-There was a more interesting data point we were able to capture as well.  There were a lot of software engineers who no longer had to go to work for the week and were forming up under IRC and Twitter as "Hurricane Hackers" to try to help out in any way they could.  I was able to engage that community and Google provided resources to help them, and they in turn were able to hack together a gas supply data set that I was then able to plot on the Crisis Map.  While probably not in any way the most difficult thing I've worked on, it's the only thing I've ever built that was on CNN.
+There was a more interesting data point we were able to capture as well.&nbsp;&nbsp;There were a lot of software engineers who no longer had to go to work for the week and were forming up under IRC and Twitter as "Hurricane Hackers" to try to help out in any way they could.&nbsp;&nbsp;I was able to engage that community and Google provided resources to help them, and they in turn were able to hack together a gas supply data set that I was then able to plot on the Crisis Map.&nbsp;&nbsp;While probably not in any way the most difficult thing I've worked on, it's the only thing I've ever built that I saw on CNN while I was coding it.
+</p>
+<p>
+<a href="/images/gcr_screenshot.png" target="_blank">screenshot</a></br>
+<a href="http://www.huffingtonpost.com/2012/11/05/google-maps-hurricane-sandy_n_2077029.html" target="_blank">article</a>
 </p>
 <p>
 <span class="badge">Python</span>
@@ -267,8 +262,8 @@ Not sure how it's going yet.
 <span class="badge">Bootstrap</span>
 </p>
 
+<a id='where'></a>
 <h2>Where I Built It <span class="muted"><small>in a rather particular order</small></span></h2>
-<a id='isocket'></a>
 <h4>isocket&nbsp;
 <span class="text-warning">Senior Software Engineer</span>&nbsp;
 </h4>
@@ -277,7 +272,6 @@ Not sure how it's going yet.
 isocket simplifies the direct sales process. Their technology automates the manual steps like order execution and monitoring, helping premium publishers and advertisers do more business directly.</br>
 <a href="https://www.isocket.com/" target="_blank">link</a>
 </p>
-<a id='google'></a>
 <h4>Google&nbsp;
 <span class="text-warning">Software Engineer V</span>&nbsp;
 </h4>
@@ -293,7 +287,6 @@ Being prepared is just as important as knowing what to do in a crisis. Public Al
 <a href="http://www.google.org/intl/en_US/crisisresponse/publicalerts/" target="_blank">link</a></br>
 <a href="/images/gpa_screenshot.png" target="_blank">screenshot</a>
 </p>
-<a id='admeld'></a>
 <h4>Admeld&nbsp;
 <span class="text-warning">Senior Software Engineer</span>&nbsp;
 </h4>
@@ -302,7 +295,6 @@ Being prepared is just as important as knowing what to do in a crisis. Public Al
 Since 2008, Admeld has led the industry in helping premium publishers maximize their ad revenue and simplify their operations. Admeld pioneered the private ad exchange and built technology that made it easy for publishers to identify new opportunities and control how every impression is sold.</br>
 <a href="http://admeld.com/" target="_blank">link</a>
 </p>
-<a id='monitor'></a>
 <h4>Monitor110&nbsp;
 <span class="text-warning">Lead Engineer</span>&nbsp;
 </h4>
@@ -313,7 +305,6 @@ Monitor110 gathered information from over 130 million sources of various types, 
 <a href="http://informationarbitrage.com/post/698402433/monitor110-a-post-mortem" target="_blank">post-mortem</a></br>
 <a href="/images/m110_screenshot.gif" target="_blank">screenshot</a>
 </p>
-<a id='nrsi'></a>
 <h4>Nat'l Reading Styles Institute&nbsp;
 <span class="text-warning">Consultant, Software Engineer</span>&nbsp;
 </h4>
@@ -322,7 +313,6 @@ Monitor110 gathered information from over 130 million sources of various types, 
 NRSI is a research-based educational organization dedicated to improving literacy.</br>
 <a href="http://www.nrsi.com" target="_blank">link</a> <span class="muted"><small>(I swear I didn't build this terrible site)</small></span>
 </p>
-<a id='suss'></a>
 <h4>SUSS MicroTec&nbsp;
 <span class="text-warning">Software Engineer</span>&nbsp;
 </h4>
@@ -331,7 +321,6 @@ NRSI is a research-based educational organization dedicated to improving literac
 SUSS MicroTec is a leading supplier of process equipment for microstructuring in the semiconductor industry and related markets. Their portfolio covers a comprehensive range of products and solutions for backend lithography, wafer bonding and photomask processing, complemented by micro-optical components.</br>
 <a href="http://www.suss.com/" target="_blank">link</a>
 </p>
-<a id='ibm'></a>
 <h4>International Business Machines&nbsp;
 <span class="text-warning">Software Engineer</span>&nbsp;
 </h4>
