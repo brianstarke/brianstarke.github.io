@@ -137,7 +137,7 @@ would know that we served 100, but they would report 80.  This meant that we're 
 serving from <strong>Ad Network B</strong> (who reported more accurately) would have netted us $90.  The Ad Server would then work off
 our own internally derived CPM and favor the <em>true</em> higher price.  Ad Network names have been removed to protect the innocent.
 </p>
-The system was built in a time before really cool stuff like <a href="http://casperjs.org/" target="_blank">CasperJS</a> existed, so we
+The system was built in a time before really cool stuff like <a href="http://agouti.org/" target="_blank">Agouti</a> existed, so we
 rolled our own solution.  A service would fire up individually addressable instances of Firefox, which had ports open to allow us to
 inject our own Javascript in to the page.  Every page the browser visited would then contain our own admeld.js which had methods we
 could call from the main Java scraping service.  (i.e. pullTableColumns would exist as a Java method which then call the corresponding
