@@ -52,6 +52,26 @@ to easily integrate any storefront experience with Bread Financing.  The button 
 <span class="badge">ReactJS</span>
 <span class="badge">PostgreSQL</span>
 </p>
+
+<h4>Disaster Alerts in Google Search / Android <span class="label label-success">Google</span></h4>
+<p>
+Cellular providers have been required by law to (finally) start pushing out timely public safety alerts to phones.&nbsp;&nbsp;These alerts are usually in all caps and accompanied by an obscenely scary noise.&nbsp;&nbsp;Using the data that the Public Alerts team is already ingesting, we wanted to supplant (or at least suppliment) these alerts with something less panic-inducing, and more information forward.&nbsp;&nbsp;Our mission was to replace <b>"FLOOD WARNING"</b> with a map and detailed (decapitalized) information such as time, duration, depth, likelihood... all the stuff that matters when you need it most.
+</p>
+<p>
+My particular contribution to this project was to take the alert text from sources like the National Weather Service and extract out the most relevant parts and recombine them to form a useful and informative snippet.&nbsp;&nbsp;For example, on a Tornado warning I'd focus more on directional and temporal aspects rather than rainfall amounts.&nbsp;&nbsp;This was done by tokenizing the text and weighting certain n-grams based on the alert type.&nbsp;&nbsp;I also worked on the UI for both the Web, and Android.
+</p>
+<p>
+These alerts were intended originally for only for Maps on the Android platform, but once demo'd we were asked to put them in Google Web Search, iOS Maps, and Google Now.
+</p>
+<a href="/images/gpa_screenshot2.png" target="_blank">screenshot</a>
+</p>
+<p>
+<span class="badge">Go</span>
+<span class="badge">Python</span>
+<span class="badge">C++</span>
+<span class="badge">Javascript</span>
+</p>
+
 <a id='afe'></a>
 <h4>Anti-Fraud Engine <span class="label label-warning">Bread Finance</span></h4>
 <p>
@@ -185,25 +205,6 @@ we were able to have a complete view of what was going on in what was quickly be
 <span class="badge">Hadoop</span>
 <span class="badge">Java</span>
 <span class="badge">MySQL</span>
-</p>
-<h4>Disaster Alerts in Google Search / Android <span class="label label-success">Google</span></h4>
-<p>
-Cellular providers have been required by law to (finally) start pushing out timely public safety alerts to phones.&nbsp;&nbsp;These alerts are usually in all caps and accompanied by an obscenely scary noise.&nbsp;&nbsp;Using the data that the Public Alerts team is already ingesting, we wanted to supplant (or at least suppliment) these alerts with something less panic-inducing, and more information forward.&nbsp;&nbsp;Our mission was to replace <b>"FLOOD WARNING"</b> with a map and detailed (decapitalized) information such as time, duration, depth, likelihood... all the stuff that matters when you need it most.
-</p>
-<p>
-My particular contribution to this project was to take the alert text from sources like the National Weather Service and extract out the most relevant parts and recombine them to form a useful and informative snippet.&nbsp;&nbsp;For example, on a Tornado warning I'd focus more on directional and temporal aspects rather than rainfall amounts.&nbsp;&nbsp;This was done by tokenizing the text and weighting certain n-grams based on the alert type.&nbsp;&nbsp;I also worked on the UI for both the Web, and Android.
-</p>
-<p>
-These alerts were intended originally for only for Maps on the Android platform, but once demo'd we were asked to put them in Google Web Search, iOS Maps, and Google Now.
-</p>
-<a href="/images/gpa_screenshot2.png" target="_blank">screenshot</a>
-</p>
-<p>
-<span class="badge">Python</span>
-<span class="badge">C++</span>
-<span class="badge">Javascript</span>
-<span class="badge">Appengine</span>
-<span class="badge">Go</span>
 </p>
 <h4>Power Outage/Gas Supply Maps During Hurricane Sandy <span class="label label-success">Google</span></h4>
 <p>
