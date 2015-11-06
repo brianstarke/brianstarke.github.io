@@ -19,6 +19,7 @@
         <ul class="dropdown-menu">
           <li><a tabindex="-1" href="#checkout">Embedded Checkout</a></li>
           <li><a tabindex="-1" href="#cps">Cross Portal Search</a></li>
+          <li><a tabindex="-1" href="#afe">Anti-Fraud Engine</a></li>
           <li><a tabindex="-1" href="#inventory_search">Inventory Search</a></li>
           <li><a tabindex="-1" href="#dogfort">Dogfort</a></li>
         </ul>
@@ -50,6 +51,18 @@ to easily integrate any storefront experience with Bread Financing.  The button 
 <span class="badge">Go</span>
 <span class="badge">ReactJS</span>
 <span class="badge">PostgreSQL</span>
+</p>
+<a id='afe'></a>
+<h4>Anti-Fraud Engine <span class="label label-warning">Bread Finance</span></h4>
+<p>
+Not only do fraudulent transactions cost the company money, but in many cases a failure to properly identify the individual to whom you are writing a loan to can cause some serious legal stickiness.
+This fraud engine collected all sorts of data throughout the checkout process like IP Address, Device ID, Geolocation, and velocity.  In addition to that, we also ran verification checks on the addresses provided, the mobile number, and checked a ton of fraud databases.
+</p>
+<p>
+All of these pieces of discrete data are collected throughout the process, and then just before you are able to complete a check out the fraud engine would generate signals out of all the data and run against a custom built rule set.  The decisioning is completely concurrent and as fast as it's slowest rule.  Given that most complicated rule can really only be a string comparison, we are able to evaluate over a thousand rules on a huge amount of data in under 200ms.  It was pretty sweet.
+</p>
+<p>
+<span class="badge">Go</span>
 </p>
 <a id='cps'></a>
 <h4>Cross Portal Search <span class="label label-warning">Admeld</span></h4>
